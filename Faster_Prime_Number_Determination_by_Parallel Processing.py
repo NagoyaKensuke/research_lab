@@ -1,3 +1,10 @@
+# Pythonのmultiprocessingモジュールを使った並列処理による素数判定の高速化の例
+# is_prime()関数で素数判定を行い、find_primes()関数で複数のプロセスを使って素数判定を並列処理する。
+# multiprocessing.Pool()を使ってプロセスプールを作成し、pool.map()を使って並列処理を実行する。
+# __name__ == '__main__'という条件で、このコードが直接実行された場合にのみ、find_primes()関数が実行される。
+# 1から100万までの整数のうち、素数の数を求めることができる。
+# 並列処理を使わない場合に比べて、処理時間が大幅に短縮されることがわかる。ただし、実行環境によっては、プロセス数を調整する必要がある場合がある。
+
 import multiprocessing
 
 def is_prime(n):
@@ -24,4 +31,3 @@ if __name__ == '__main__':
     filtered_primes = [x for x in primes if x]
     print(filtered_primes)
     print(len(filtered_primes))
-    # print(sum(primes))
